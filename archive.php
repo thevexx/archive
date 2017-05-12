@@ -1,10 +1,10 @@
 <?php
-
 get_header();
 get_sidebar();
 
- the_post(); ?>          
- 
+ the_post(); ?>
+    echo "archive.php";
+
 <?php if ( is_day() ) : ?>
                 <h1 class="page-title"><?php printf( __( 'Daily Archives: <span>%s</span>', 'your-theme' ), get_the_time(get_option('date_format')) ) ?></h1>
 <?php elseif ( is_month() ) : ?>

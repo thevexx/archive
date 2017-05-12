@@ -55,7 +55,7 @@ function prfx_meta_callback( $post ) {
 	<p>
 		<label for="meta-prof" class="prfx-row-title"><?php _e( 'Enseignant affecté', 'prfx-textdomain' )?></label>
 		<input type="text" name="meta-prof" id="meta-prof" value="<?php if ( isset ( $prfx_stored_meta['meta-prof'] ) ) echo $prfx_stored_meta['meta-prof'][0]; ?>" />
-		<br>
+			<br>
 		<label for="meta-abs" class="prfx-row-title"><?php _e( 'Nombre d’absence', 'prfx-textdomain' )?></label>
 		<input type="number" name="meta-abs" id="meta-abs" value="<?php if ( isset ( $prfx_stored_meta['meta-abs'] ) ) echo $prfx_stored_meta['meta-abs'][0]; ?>" />
 	</p>
@@ -85,6 +85,6 @@ function prfx_meta_save( $post_id ) {
 add_action( 'save_post', 'prfx_meta_save' );
 
 function prfx_custom_meta() {
-	add_meta_box( 'prfx_meta', __( 'Enseignant et Nombre D\'absence', 'prfx-textdomain' ), 'prfx_meta_callback', 'ModulePost' );
+	add_meta_box( 'prfx_meta', __( 'Enseignant et Nombre D\'absence', 'prfx-textdomain' ), 'prfx_meta_callback', 'post' );
 }
 add_action( 'add_meta_boxes', 'prfx_custom_meta' );
